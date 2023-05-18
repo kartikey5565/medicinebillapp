@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navigation from "./Navigation";
+import Input from "./Input";
+import Medicines from "./Medicines";
+import Cart from "./Cart";
+import { useState } from "react";
 function App() {
+  const [cart,setCart] = useState(false)
+  const toggleCart = ()=>{
+    setCart(pre=>!pre)
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navigation onCart={toggleCart}/>
+      <Input/>
+      <h2 className="m-3">All Medicines :</h2>
+      <Medicines/>
+      {cart&&<Cart toggle={toggleCart}/>}
+    </>
   );
 }
 
