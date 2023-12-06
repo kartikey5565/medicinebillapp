@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CartContext from './CartContext'
 import axios from 'axios'
 
-const url = 'https://crudcrud.com/api/df6277b243434e489d2211ea014c530c/cart'
+const url = 'https://crudcrud.com/api/da8d0d53a0944472bb0e934ae4ca935e/cart'
 
 const CartProvider = (props) => {
     const lodCartItems = async()=>{
